@@ -29,12 +29,14 @@ int main() {
 	out.create(height, width, CV_8UC3);
 	cv::namedWindow(wname);
 
-	skyline[0] = cv::imread("../skyline1.png");		//‹ßŒi
-	skyline[1] = cv::imread("../skyline2.png");		//‰“Œi
-	light[0]   = cv::imread("../light1.png");
-	light[1] = cv::imread("../light2.png");			//í–é“”
+	skyline[0] = cv::imread("skyline1.png");		//‹ßŒi
+	skyline[1] = cv::imread("skyline2.png");		//‰“Œi
+	light[0]   = cv::imread("light1.png");
+	light[1] = cv::imread("light2.png");			//í–é“”
 	if (skyline[0].empty())	return 1;
-
+	if (skyline[1].empty())	return 1;
+	if (light[0].empty())	return 1;
+	if (light[1].empty())	return 1;
 
 	for (ang1=.0; ang1<M_PI/2; ang1+=0.01) {
 		(ang1 > M_PI / 3) ? sw[0] = true : sw[0] = false;
